@@ -19,5 +19,5 @@ services:
       - ./data/plex:/data
       - ./data/plex/config:/config
     environment:
-      - PLEX_CLAIM=<claim_token>
+      - PLEX_CLAIM=<claim-D3TCCajyX78gbPSCNsU4>
     restart: always
