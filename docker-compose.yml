@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nextcloud:
+    build: ./nextcloud
+    container_name: nextcloud
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data/nextcloud:/var/www/html
+    restart: always
+
+  plex:
+    build: ./plex
+    container_name: plex
+    ports:
+      - "32400:32400"
+    volumes:
+      - ./data/plex:/data
+      - ./data/plex/config:/config
+    environment:
+      - PLEX_CLAIM=<claim_token>
+    restart: always
